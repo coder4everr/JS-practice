@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<script>
+
+function addTimes() {
+    let totalHours = 0;
+    let totalMinutes = 0;
+    let input;
+    
+    while(true){
+    input=prompt("Enter Value or Type 'End'");
+    if (input.toLowerCase()==="end"){
+    break;}
+    
+    let time=parseFloat(input);
+    if(isNaN(time)){
+    alert ("Invalid Entry!");
+    continue;
+    } 
+    let hours=Math.floor(time);
+    let minutes=(time-hours)*100;
+    
+    totalHours+=hours;
+    totalMinutes+=minutes;
+    }
+    
+    
+    if (totalMinutes>=60){
+    totalHours+=Math.floor(totalMinutes/60);
+    totalMinutes=totalMinutes%60;
+    }
+    let total= totalHours+(totalMinutes/100);
+    return total.toFixed(2);
+    }
+
+let x=addTimes()
+document.write("Total Time: ",x)
+</script>
+
