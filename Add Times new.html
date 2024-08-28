@@ -1,0 +1,73 @@
+<style>
+body{
+	text-align:center;
+
+}
+#addHours, #addMinutes, #addButton{
+	background:#EBD3F8;
+    width:10%;
+    height: 30px;
+    border-radius:5px;
+    border:1px solid;
+    font-size: 18px;
+    text-align:center;
+}
+label, #addButton{
+	font-size:18px;
+}
+#addButton{
+	background: #7A1CAC;
+	color:white;
+	width: 15%;
+}
+#timeDisplay{
+	background:#CD5C08;
+    height: 30px;
+    width:30%;
+    font-size:20px;
+    color:white;
+    text-align:center;
+    justify-content:center;
+    border-radius:5px;
+    margin-left:35%;
+}
+</style>
+<html>
+<body>
+<label>Hours: </label>
+<input id=addHours type='text'>
+<label>Minutes: </label>
+<input id=addMinutes type='text'>
+<button id=addButton>Submit</button>
+<p id=timeDisplay></p>
+
+<script>
+let minutes=0;
+let hours=0;
+
+document.getElementById('addButton').addEventListener('click', function(){
+let x=document.getElementById('addHours').value;
+let totalHours=parseFloat(x);
+if (isNaN(totalHours)){
+alert('invalid Hours entry')
+return;}
+
+let y=document.getElementById('addMinutes').value;
+let totalMinutes=parseFloat(y);
+if (isNaN(totalMinutes)){
+alert("invalid Minutes entry")
+return;}
+hours+=totalHours;
+minutes+=totalMinutes;
+if(minutes>=60){
+hours+=Math.floor(minutes/60);
+minutes=minutes%60;}
+
+document.getElementById('timeDisplay').textContent= "Time: "+hours+":"+ minutes;
+document.getElementById('addHours').value = '';
+document.getElementById('addMinutes').value = ''
+
+})
+</script>
+</body>
+</html>
