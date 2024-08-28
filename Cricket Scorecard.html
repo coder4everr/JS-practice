@@ -1,0 +1,28 @@
+<script>
+function overs(over1,over2){
+balls1=Math.floor(over1)*6+(over1-Math.floor(over1))*10
+balls2=Math.floor(over2)*6+(over2-Math.floor(over2))*10
+ballsremaining=balls2-balls1
+BPO=ballsremaining/6
+oversleft=Math.floor(BPO)+(BPO-Math.floor(BPO))*6/10
+
+return parseFloat(oversleft.toFixed(1));
+}
+
+var runs=prompt("Runs Scored")
+var wickets=prompt("Wickets Lost")
+var wicketsremain=10-wickets
+var target=191
+var runsrequired=target-runs
+var over1=prompt("Overs Played")
+var over2=20
+var a=(overs(over1,over2))
+var RR=(runs/(balls1/6)).toFixed(2)
+var RRR=(runsrequired/BPO).toFixed(2)
+document.write("Pakistan ",runs,"-",wickets, " Overs: ", over1, " Target: ",target, "<br>")
+document.write("Need ",runsrequired," from ",a," overs.<br>")
+document.write("Current Run Rate: ",RR, "<br> Required Rate: ",RRR)
+
+
+</script>
+
