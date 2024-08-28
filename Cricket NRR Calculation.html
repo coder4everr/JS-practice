@@ -1,0 +1,46 @@
+<html>
+<script>
+function RunRateFor(runs, overs){
+//convert overs to balls
+let balls=Math.floor(overs)*6+(overs-Math.floor(overs))*10
+//convert balls to fractional overs
+let fractionalovers=(Math.floor(overs)+(overs-Math.floor(overs))*10/6)
+let runrate=(runs/fractionalovers).toFixed(2)
+
+return runrate;
+}
+function RunRateAgainst(runs, overs){
+//convert overs to balls
+let balls=Math.floor(overs)*6+(overs-Math.floor(overs))*10
+//convert balls to fractional overs
+let fractionalovers=(Math.floor(overs)+(overs-Math.floor(overs))*10/6)
+let runrate=(runs/fractionalovers).toFixed(2)
+
+return runrate;
+}
+
+var runs=181
+var overs=20
+var a=RunRateFor(runs, overs)
+document.write("Runs For: "+runs, " Overs: ", overs+" --- ")
+
+
+var runs=168
+var overs=20
+var b=RunRateAgainst(runs, overs)
+document.write("Runs Against: "+runs, " Overs: ", overs+"<br>" ,"Net Run Rate: "+(a-b).toFixed(3) )
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
