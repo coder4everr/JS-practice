@@ -1,0 +1,36 @@
+<script>
+const indiaM=54
+const indiaP=14412
+const indiaR=267
+const SAM=34
+const SAP=8560
+const SAR=252
+// Assign numeric values for wins
+const India = 1;
+const SA = 2;
+
+// Function to predict the outcome
+function predictMatchOutcome(result) {
+    if (result === India) {
+    	var win=(indiaP+50+SAR)/(indiaM+1);
+		var loss=(SAP-50+indiaR)/(SAM+1)
+        document.write("India's Ranking: ", win.toFixed(2), "<br>", "South Africa Rankings: ", loss.toFixed(2));
+
+           
+    } else if (result === SA) {
+    	var loss=(indiaP-50+SAR)/(indiaM+1);
+		var win=(SAP+50+indiaR)/(SAM+1)
+        document.write("India's Ranking: ", loss.toFixed(2), "<br>", "South Africa Rankings: ", win.toFixed(2));
+    } else {
+        return "It's a draw or undecided!";
+    }
+}
+
+// Example usage:
+const matchResult = 1; // You can change this value to teamBWin to test
+
+const outcome = predictMatchOutcome(matchResult);
+
+
+</script>
+
